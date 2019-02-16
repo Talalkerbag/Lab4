@@ -38,7 +38,8 @@ public class ColorAdapter extends BaseAdapter {
         TextView colortext = new TextView(context);
         colortext.setText(colors[position]);
         colortext.setTextColor(Color.BLACK);
-        if(colors[position] != "None Selected") {
+        colortext.setTextSize(24);
+        if(!colors[position].equals("None Selected")) {
             colortext.setBackgroundColor(Color.parseColor(colors[position]));
             return colortext;
         }
