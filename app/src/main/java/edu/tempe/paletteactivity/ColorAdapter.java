@@ -1,6 +1,7 @@
 package edu.tempe.paletteactivity;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +12,13 @@ import android.widget.TextView;
 public class ColorAdapter extends BaseAdapter {
     private Context context;
     private String colors[];
+    private String[] colorsText;
 
-    public ColorAdapter(Context applicationContext,  String[] colors) {
+    public ColorAdapter(Context applicationContext,  String[] colors, String[] colorsText) {
         this.context = applicationContext;
         this.colors = colors;
+        this.colorsText = colorsText;
     }
-
 
     @Override
     public int getCount() {
@@ -36,10 +38,10 @@ public class ColorAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         TextView colortext = new TextView(context);
-        colortext.setText(colors[position]);
+        colortext.setText(colorsText[position]);
         colortext.setTextColor(Color.BLACK);
         colortext.setTextSize(24);
-        if(!colors[position].equals("None Selected")) {
+        if(position != 0) {
             colortext.setBackgroundColor(Color.parseColor(colors[position]));
             return colortext;
         }
