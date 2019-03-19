@@ -9,8 +9,6 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 
 public class PaletteActivity extends AppCompatActivity {
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +33,6 @@ public class PaletteActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 }
-
-
             public void onNothingSelected(AdapterView<?> adapterView) {
                 return;
             }
